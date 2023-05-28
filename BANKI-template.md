@@ -42,7 +42,7 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 - [ ] Give me an example of a project or initiative that you started on your own. What prompted you to get started?
   - **Cause:** I was interested to start this project because I used to be a musician and thought wouldn't it be great if I created a project that linked helping musicians which also helped with my coding skills
   - **Action:** started a repo on the project, currently working on it right now.
-  - **Result:** Nothing yet. 
+  - **Result:** Nothing yet.
 - [ ] Tell me about a time you had to work on several projects at once. How did you handle this?
   - **Cause:**
   - **Action:**
@@ -138,41 +138,46 @@ Most of the technical questions should have a three sentence response in the EUE
 
 ### HTML
 
-- [ ] What does a doctype do?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] How do you serve a page with content in multiple languages?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What kinds of things must you be wary of when designing or developing for multilingual sites?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are `data-` attributes good for?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Consider HTML5 as an open web platform. What are the building blocks of HTML5?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Describe the difference between a cookie, sessionStorage and localStorage.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Describe the difference between `<script>, <script async> and <script defer>`.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+- [x] What does a doctype do?
+  - **Explanation:** A doctype (short for document type declaration) is an instruction to the web browser about what version of HTML the page is written in. It is generally the first line that appears in your HTML documents. It helps the browser understand how to render the page. It doesn't add anything visible to the page itself, but without it, browsers may go into "quirks mode" and render the page inconsistently.
+  - **Use:** Doctype is used at the beginning of your HTML document to signal to the web browser the version of HTML you're using. It's important to always include the doctype to ensure your pages render consistently across different browsers.
+  - **Example:** A simple example of a doctype declaration is `<!DOCTYPE html>`, which is used for HTML5.
+  - **Source:** [MDN Web Docs: Doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)
+- [x] How do you serve a page with content in multiple languages?
+  - **Explanation:** There are several ways to serve a page with content in multiple languages. The main methods include using the HTML `lang` attribute to specify language for the whole page or for individual elements, using server-side or client-side language detection to serve different versions of pages, or using Content Management Systems (CMS) that support multi-language content.
+  - **Use:** Serving multi-language content is crucial for websites that target users from different countries or speakers of different languages. This can greatly enhance user experience and accessibility.
+  - **Example:** Here's an example of using the `lang` attribute in HTML: `<html lang="en">` for English, `<html lang="es">` for Spanish. For server-side language detection, you might use HTTP Accept-Language headers, IP address geolocation or user preferences stored in a profile or a cookie. For example, in PHP you might use `$_SERVER['HTTP_ACCEPT_LANGUAGE']` to get the user's language.
+  - **Source:** [MDN Web Docs: Language tags in HTML and XML](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang)
+- [x] What kinds of things must you be wary of when designing or developing for multilingual sites?
+  - **Explanation:** There are a few considerations when designing or developing for multilingual sites. These include text expansion (text length can vary between languages), direction of text (some languages are read right-to-left), character encoding (UTF-8 is recommended), localisation (adapting your site to local cultures and norms), and date/time and number formats.
+  - **Use:** These considerations help to ensure that your website is not only translated correctly, but also culturally appropriate and user-friendly for all users regardless of their language or location.
+  - **Example:** If your site uses buttons with text, the button size may need to be flexible to account for text expansion in different languages. Similarly, a date displayed as "MM/DD/YYYY" would be confusing for users in a country where "DD/MM/YYYY" is the norm.
+  - **Source:** [W3C: Internationalization Techniques: Developing multilingual websites](https://www.w3.org/International/techniques/developing-multilingual-sites)
+
+- [x] What are `data-` attributes good for?
+  - **Explanation:** `data-` attributes in HTML allow you to store extra information or custom data on any HTML element. The stored data can then be used in JavaScript to create more interactive experiences.
+  - **Use:** These attributes are used when there is no existing attribute for the purpose you need, or for private data for which there are no associated semantics. They can be used to store data that will be manipulated by JavaScript or CSS.
+  - **Example:** `<div data-user="1234" data-date="2023-05-28">Some content</div>`
+  - **Source:** [MDN Web Docs: Using data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
+
+- [x] Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+  - **Explanation:** The building blocks of HTML5 as an open web platform include: Semantic HTML tags, CSS3, SVG, WebGL, Geolocation, Web Storage, IndexedDB, File API, Web Workers, Web Sockets, Media (Audio & Video), Canvas, Forms, and more.
+  - **Use:** These building blocks are used to develop web applications with more functionality, improved semantics, enhanced interactivity, and better accessibility.
+  - **Example:** An example of a semantic HTML5 element is `<article>`, which represents a standalone piece of content in a document. CSS3 is used for styling, while the Canvas API can be used to draw 2D shapes and images for games or other visual displays.
+  - **Source:** [MDN Web Docs: HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+
+- [x] Describe the difference between a cookie, sessionStorage and localStorage.
+  - **Explanation:** All three are web storage technologies but they differ in lifespan and scope. Cookies are small pieces of data that are sent from a website and stored in a user's web browser, but they are included with every HTTP request, have size limits, and can expire. sessionStorage is limited to the duration of the page session and is cleared when the tab is closed. localStorage has a larger storage limit and data persists even when the browser is closed and reopened.
+  - **Use:** Cookies are often used for session management, personalization, and tracking. sessionStorage is used to store data for the duration of a page session. localStorage is used for long-term local storage of data that can persist across browser sessions.
+  - **Example:** A cookie might be used to remember a user's login status. sessionStorage might be used to remember the state of a JavaScript web application within a single tab. localStorage could be used to save user preferences that need to persist across many sessions.
+  - **Source:** [MDN Web Docs: Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+
+- [x] Describe the difference between `<script>, <script async> and <script defer>`.
+  - **Explanation:** These tags control how JavaScript is loaded and run. `<script>` blocks HTML parsing until the script is loaded and run. `<script async>` does not block HTML parsing and executes as soon as the script is available. `<script defer>` does not block HTML parsing and guarantees the execution of scripts in the order they were declared, but only after the document has been parsed.
+  - **Use:** Use `<script>` if your script needs to run before the page renders (though this is rarely needed). Use `<script async>` when your script is independent of any other scripts on the page and can run as soon as it's available. Use `<script defer>` if your script relies on the entire DOM being loaded and if it should run before the `DOMContentLoaded` event.
+  - **Example:** `<script src="script.js"></script>`, `<script async src="script.js"></script>`, `<script defer src="script.js"></script>`
+  - **Source:** [MDN Web Docs: script](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
+
 - [ ] Why is it generally a good idea to position CSS `<link>`s within `<head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
   - **Explanation:**
   - **Use:**
