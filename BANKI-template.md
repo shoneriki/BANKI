@@ -178,26 +178,45 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Example:** `<script src="script.js"></script>`, `<script async src="script.js"></script>`, `<script defer src="script.js"></script>`
   - **Source:** [MDN Web Docs: script](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
 
-- [ ] Why is it generally a good idea to position CSS `<link>`s within `<head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
-  - **Explanation:**
-  - **Use:**
+- [x] Why is it generally a good idea to position CSS `<link>`s within `<head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+  - **Explanation:** CSS `<link>`s are placed within `<head>` to prevent FOUC (Flash of Unstyled Content), which happens when a page begins to load before its CSS. JS `<script>`s are placed just before `</body>` because they block rendering and parsing of the HTML document until they're loaded and executed. An exception would be when your script contains some critical functionality that should be loaded before the page is rendered or when using the `async` or `defer` attributes to control the loading behavior of your scripts.
+  - **Use:** Following this practice enhances the user experience because the page can render progressively, allowing users to start consuming content faster.
   - **Example:**
-  - **Source:**
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <!-- Your content here -->
+    <script src="script.js"></script>
+  </body>
+  </html>
+  ```
+  - **Source:** [Google Developers: Efficiently load JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 - [ ] What is progressive rendering?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:**  Progressive rendering is a technique used to improve the perceived performance of rendering a webpage. It involves rendering and delivering the more important, above-the-fold content first, and then progressively loading the rest of the content.
+  - **Use:** This technique is useful for improving user experience, particularly on mobile devices or slow network connections, by allowing users to start interacting with the page sooner.
+  - **Example:** A common technique for progressive rendering is lazy loading, where content like images or scripts are loaded only when they enter (or are about to enter) the viewport.
+  - **Source:** Google Developers: PRPL Pattern
 - [ ] Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** The srcset attribute is used in an <img> element to define different images to be displayed based on the pixel density of the viewer's screen or the size of the viewport. The browser decides which image to use based on the current screen resolution and the sizes of the images specified in the srcset.
+  - **Use:** This attribute is particularly useful for responsive designs, where you want to provide high-resolution images for high-DPI screens, but serve smaller, less bandwidth-intensive images for lower-DPI screens.
+  - **Example:**  <img srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w" src="small.jpg" alt="An example image">
+  - **Source:** MDN Web Docs: Responsive images
 - [ ] Have you used different HTML templating languages before?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:**  I'm familiar with a variety of them including Handlebars, Mustache, EJS (Embedded JavaScript), Pug (formerly Jade), and others. Templating languages allow you to generate HTML dynamically and can make your code more readable and maintainable.
+  - **Use:** Templating languages are used to build dynamic HTML content on the server or client side. They can be used to interpolate variables into HTML, loop over data, conditionally render sections, and include partials (reusable chunks of HTML).
+  - **Example:**  In EJS, you might use a loop to render a list of items:
+  ```
+  <ul>
+  <% items.forEach(function(item){ %>
+    <li><%= item %></li>
+  <% }); %>
+
+</ul>
+  ```
+  - **Source:** MDN Web Docs: JavaScript templating
 
 ### CSS
 
