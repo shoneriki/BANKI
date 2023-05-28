@@ -40,9 +40,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 ### Questions
 
 - [ ] Give me an example of a project or initiative that you started on your own. What prompted you to get started?
-  - **Cause:**
-  - **Action:**
-  - **Result:**
+  - **Cause:** I was interested to start this project because I used to be a musician and thought wouldn't it be great if I created a project that linked helping musicians which also helped with my coding skills
+  - **Action:** started a repo on the project, currently working on it right now.
+  - **Result:** Nothing yet. 
 - [ ] Tell me about a time you had to work on several projects at once. How did you handle this?
   - **Cause:**
   - **Action:**
